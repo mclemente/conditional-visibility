@@ -14,7 +14,7 @@ Hooks.once("init", async () => {
 			if (flag && flag.includes(src.id)) return false;
 			return wrapped(visionSource, target);
 		},
-		"MIXED",
+		"MIXED"
 	);
 });
 

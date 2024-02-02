@@ -17,10 +17,10 @@ export class ConditionalVisibilityHandler {
 
 		ConditionalVisibilityHandler._addHudButton(html, token.object);
 		html.find(".conditional-visibility")[0].classList.toggle("active", this._buttonsActive);
-		html.find(`.control-icon[data-action="visibility"]`).off("click"); // Remove default behavior
+		html.find(".control-icon[data-action=\"visibility\"]").off("click"); // Remove default behavior
 
 		// html.find(`.control-icon[data-action="visibility"]`).click(app._onClickControl.bind(app));
-		html.find(`.control-icon[data-action="visibility"]`)
+		html.find(".control-icon[data-action=\"visibility\"]")
 			.on("click", (event) => {
 				if (event.isDefaultPrevented()) return;
 				if (!token.hidden && this._buttonsActive) this._buttonsActive = false;
@@ -77,7 +77,7 @@ export class ConditionalVisibilityHandler {
 			.join("");
 		const content = playerCharacters + NPCs;
 		const button = $(`<div class="conditional-visibility">${content}</div>`);
-		const visibilityButton = html.find(`.control-icon[data-action="visibility"]`);
+		const visibilityButton = html.find(".control-icon[data-action=\"visibility\"]");
 		visibilityButton.append(button);
 	}
 
@@ -104,11 +104,11 @@ export class ConditionalVisibilityHandler {
 		const flag = doc.getFlag("conditional-visibility", "tokens");
 		const statuses = flag
 			? flag.reduce((obj, flag) => {
-					for (const id of flag) {
-						obj[id] = { id };
-					}
-					return obj;
-			  }, {})
+				for (const id of flag) {
+					obj[id] = { id };
+				}
+				return obj;
+			}, {})
 			: {};
 
 		// Prepare the list of effects from the configured defaults and any additional effects present on the Token
@@ -125,7 +125,7 @@ export class ConditionalVisibilityHandler {
 				title: label ? game.i18n.localize(label) : null,
 				src,
 				isActive,
-				cssClass: isActive ? "active" : "",
+				cssClass: isActive ? "active" : ""
 			};
 			return obj;
 		}, {});
