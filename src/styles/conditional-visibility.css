@@ -1,0 +1,37 @@
+#token-hud .conditional-visibility {
+	visibility: hidden;
+	position: absolute;
+	left: 65px;
+	top: 0;
+	display: grid;
+	padding: 3px;
+	box-sizing: content-box;
+	width: 100px;
+	grid-template-columns: repeat(4, 25%);
+	background: rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 15px var(--color-shadow-dark);
+	border: 1px solid var(--color-border-dark-3);
+	border-radius: 4px;
+	pointer-events: all;
+}
+#token-hud .conditional-visibility.active {
+	visibility: visible;
+}
+#token-hud .conditional-visibility .token-control {
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	opacity: 0.5;
+}
+#token-hud .conditional-visibility .token-control:hover {
+	opacity: 0.75;
+}
+#token-hud .conditional-visibility .token-control.active {
+	opacity: 1;
+}
+#token-hud .conditional-visibility .token-control.overlay {
+	opacity: 1;
+	border: 1px solid var(--color-border-highlight);
+}

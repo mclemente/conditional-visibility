@@ -1,0 +1,43 @@
+{
+	"id": "conditional-visibility",
+	"title": "Conditional Visibility",
+	"description": "<description of the package>",
+	"authors": [
+		{
+			"name": "Matheus Clemente",
+			"discord": "mclemente#5524"
+		}
+	],
+	"url": "This is auto replaced",
+	"license": "MIT",
+	"version": "This is auto replaced",
+	"compatibility": {
+		"minimum": "11",
+		"verified": "11"
+	},
+	"scripts": [],
+	"esmodules": ["module/conditional-visibility.js"],
+	"styles": ["styles/conditional-visibility.css"],
+	"packs": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"relationships": {
+		"requires": [
+			{
+				"id": "lib-wrapper",
+				"type": "module",
+				"manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+				"compatibility": {
+					"verified": "1.12.12.1"
+				}
+			}
+		]
+	},
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced"
+}
