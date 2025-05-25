@@ -1,8 +1,3 @@
-// SPDX-FileCopyrightText: 2022 Johannes Loher
-// SPDX-FileCopyrightText: 2022 David Archibald
-//
-// SPDX-License-Identifier: MIT
-
 import fs from "fs-extra";
 import gulp from "gulp";
 import sourcemaps from "gulp-sourcemaps";
