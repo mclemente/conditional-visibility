@@ -1,7 +1,7 @@
 {
 	"id": "conditional-visibility",
 	"title": "Conditional Visibility",
-	"description": "<description of the package>",
+	"description": "Hide tokens from some tokens while keeping it visible to others.",
 	"authors": [
 		{
 			"name": "Matheus Clemente",
@@ -12,13 +12,11 @@
 	"license": "MIT",
 	"version": "This is auto replaced",
 	"compatibility": {
-		"minimum": "11",
-		"verified": "11"
+		"minimum": "13",
+		"verified": "13"
 	},
-	"scripts": [],
 	"esmodules": ["module/conditional-visibility.js"],
 	"styles": ["styles/conditional-visibility.css"],
-	"packs": [],
 	"languages": [
 		{
 			"lang": "en",

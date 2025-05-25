@@ -1,17 +1,16 @@
-import { ConditionalVisibilityHandler } from "./ConditionalVisibilityHandler.js";
-import { registerSettings } from "./settings.js";
+
+import TokenHUDMixin from "./token-hud.js";
 
 Hooks.once("init", async () => {
-	game.conditionalVisibility = new ConditionalVisibilityHandler();
-	Hooks.on("renderTokenHUD", (app, html, data) => game.conditionalVisibility._renderTokenHUD(app, html, data));
+	CONFIG.Token.hudClass = TokenHUDMixin(CONFIG.Token.hudClass);
 	libWrapper.register(
 		"conditional-visibility",
 		"DetectionMode.prototype._canDetect",
 		(wrapped, visionSource, target) => {
 			const src = visionSource.object.document;
 			const tgt = target?.document;
-			const flag = tgt.getFlag("conditional-visibility", "tokens");
-			if (flag && flag.includes(src.id)) return false;
+			const flag = tgt.getFlag("conditional-visibility", "tokens") ?? [];
+			if (flag.includes(src.id)) return false;
 			return wrapped(visionSource, target);
 		},
 		"MIXED"
