@@ -16,7 +16,3 @@ Hooks.once("init", async () => {
 		"MIXED"
 	);
 });
-
-Hooks.once("setup", async () => {});
-
-Hooks.once("ready", async () => {});
