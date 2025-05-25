@@ -1,3 +1,5 @@
+// Structure taken from https://github.com/dev7355608/vision-5e/blob/ff2a91531480ec31c5b9200a785125054b927039/scripts/token-hud.mjs
+
 export default (TokenHUD) => class extends TokenHUD {
 	/** @override */
 	static DEFAULT_OPTIONS = foundry.utils.mergeObject(super.DEFAULT_OPTIONS, {
