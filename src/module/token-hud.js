@@ -49,7 +49,7 @@ export default (TokenHUD) => class extends TokenHUD {
 			})
 			.map((t) => {
 				const img = document.createElement("img");
-				img.classList.add("token-control");
+				// img.classList.add("token-control");
 				if (flag.includes(t.document.id)) img.classList.add("active");
 
 				img.src = t.document.texture.src;
@@ -70,13 +70,11 @@ export default (TokenHUD) => class extends TokenHUD {
 				});
 				return img;
 			});
-		const img = document.createElement("img");
-		img.src = "icons/svg/cowled.svg";
-		img.classList.add("token-control");
-		img.dataset.tooltip = "CONDITIONAL_VISIBILITY.AllTokens";
-		img.dataset.action = "conditional-visibility.all";
-		if (this.document.hidden) img.classList.add("active");
-		tokens.unshift(img);
+		const anchor = document.createElement("a");
+		if (this.document.hidden) anchor.classList.add("active");
+		anchor.innerText = "All Tokens";
+		anchor.dataset.action = "conditional-visibility.all";
+		tokens.unshift(anchor);
 		return tokens;
 	}
 

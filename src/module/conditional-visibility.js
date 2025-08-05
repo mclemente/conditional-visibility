@@ -5,13 +5,12 @@ Hooks.once("init", async () => {
 	CONFIG.Token.hudClass = TokenHUDMixin(CONFIG.Token.hudClass);
 	libWrapper.register(
 		"conditional-visibility",
-		"DetectionMode.prototype._canDetect",
-		(wrapped, visionSource, target) => {
+		"DetectionMode.prototype.testVisibility",
+		function (wrapped, visionSource, mode, { object, tests }) {
 			const src = visionSource.object.document;
-			const tgt = target?.document;
-			const flag = tgt.getFlag("conditional-visibility", "tokens") ?? [];
+			const flag = object?.document.getFlag("conditional-visibility", "tokens") ?? [];
 			if (flag.includes(src.id)) return false;
-			return wrapped(visionSource, target);
+			return wrapped(visionSource, mode, { object, tests });
 		},
 		"MIXED"
 	);
