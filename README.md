@@ -1,6 +1,6 @@
 # Conditional Visibility
 
-This FoundryVTT module changes the Toggle Visibility button on the Token HUD to open a palette to seçect which tokens can't see the controlled token.
+This FoundryVTT module changes the Toggle Visibility button on the Token HUD to open a palette to select which tokens can't see the controlled token.
 
 ![](https://raw.githubusercontent.com/mclemente/conditional-visibility/refs/heads/main/media/Example%201.jpg)
 
