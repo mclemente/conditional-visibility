@@ -12,4 +12,4 @@ This FoundryVTT module changes the Toggle Visibility button on the Token HUD to 
 
 ## Compatibility
 
-This module should be compatible with any system and any modules that don't
+This module should be compatible with any system and any modules that don't override `DetectionMode#testVisibility`.
