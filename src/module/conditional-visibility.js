@@ -8,7 +8,7 @@ Hooks.once("init", async () => {
 		"DetectionMode.prototype.testVisibility",
 		function (wrapped, visionSource, mode, { object, tests }) {
 			const src = visionSource.object.document;
-			const flag = object?.document.getFlag("conditional-visibility", "tokens") ?? [];
+			const flag = object?.document?.getFlag("conditional-visibility", "tokens") ?? [];
 			if (flag.includes(src.id)) return false;
 			return wrapped(visionSource, mode, { object, tests });
 		},
