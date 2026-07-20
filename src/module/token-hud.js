@@ -15,7 +15,7 @@ export default (TokenHUD) => class extends TokenHUD {
 
 		const buttons = this.#getSelectableTokens();
 
-		if (buttons.length) {
+		if (game.user.isGM && buttons.length) {
 			const div = document.createElement("div");
 
 			div.classList.add("palette", "visibility");
@@ -26,11 +26,9 @@ export default (TokenHUD) => class extends TokenHUD {
 			}
 
 			const visibilityButton = result.hud.querySelector(".control-icon[data-action=\"visibility\"]");
-			if (visibilityButton && visibilityButton?.dataset) {
-				visibilityButton.dataset.action = "togglePalette";
-				visibilityButton.dataset.palette = "visibility";
-				visibilityButton.insertAdjacentElement("afterend", div);
-			}
+			visibilityButton.dataset.action = "togglePalette";
+			visibilityButton.dataset.palette = "visibility";
+			visibilityButton.insertAdjacentElement("afterend", div);
 		}
 
 		return result;
