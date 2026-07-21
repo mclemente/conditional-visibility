@@ -12,10 +12,11 @@ export default (TokenHUD) => class extends TokenHUD {
 	/** @override */
 	async _renderHTML(context, options) {
 		const result = await super._renderHTML(context, options);
+		if (!game.user.isGM) return result;
 
 		const buttons = this.#getSelectableTokens();
 
-		if (game.user.isGM && buttons.length) {
+		if (buttons.length) {
 			const div = document.createElement("div");
 
 			div.classList.add("palette", "visibility");
