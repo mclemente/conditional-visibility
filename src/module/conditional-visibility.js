@@ -6,11 +6,11 @@ Hooks.once("init", async () => {
 	libWrapper.register(
 		"conditional-visibility",
 		"DetectionMode.prototype.testVisibility",
-		function (wrapped, visionSource, mode, { object, tests }) {
+		function (wrapped, visionSource, mode, { object, level, tests }) {
 			const src = visionSource.object.document;
 			const flag = object?.document?.getFlag("conditional-visibility", "tokens") ?? [];
 			if (flag.includes(src.id)) return false;
-			return wrapped(visionSource, mode, { object, tests });
+			return wrapped(visionSource, mode, { object, level, tests });
 		},
 		"MIXED"
 	);
