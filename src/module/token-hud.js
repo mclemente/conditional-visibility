@@ -41,7 +41,7 @@ export default (TokenHUD) => class extends TokenHUD {
 	#getSelectableTokens() {
 		const flag = this.document.getFlag("conditional-visibility", "tokens") ?? [];
 		const tokens = canvas.tokens.placeables
-			.filter((t) => t.document.id !== this.document.id && !t.combatant?.defeated)
+			.filter((t) => t.document.id !== this.document.id && !t.combatant?.defeated && t.document?.sight?.enabled)
 			.sort((a, b) => {
 				const aIsPlayer = a.document.hasPlayerOwner ? 0 : 1;
 				const bIsPlayer = b.document.hasPlayerOwner ? 0 : 1;
